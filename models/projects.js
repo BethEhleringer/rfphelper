@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const projectsSchema = new Schema({
     projectName: { type: String, required: true },
     team: { type: Array, required: true },
-    startDate: Date,
+    startDate: String,
     endDate: Date,
     sector: String,
     cost: Number,
