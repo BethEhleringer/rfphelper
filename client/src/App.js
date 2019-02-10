@@ -12,7 +12,8 @@ import Test from "./pages/Test";
 import Usersold1 from "./pages/Usersold1";
 import Usersold2 from "./pages/Usersold2";
 import Usersold3 from "./pages/Usersold3";
-
+import Login2 from "./pages/Login2";
+import Members from "./pages/Members";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <Route exact path="/usersold1" component={Usersold1} />
           <Route exact path="/usersold2" component={Usersold2} />
           <Route exact path="/usersold3" component={Usersold3} />
+          <Route exact path="/login2" component={Login2} />
+          <Route exact path="/members" component={Members} />
           <Route component={NoMatch} />
         </Switch>
       </div>

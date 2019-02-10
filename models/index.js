@@ -1,4 +1,5 @@
 module.exports = {
   Projects: require("./projects"),
-  Users: require("./users")
+  Users: require("./users"),
+  Members: require("./members")
 };

@@ -8,9 +8,9 @@ import API from "../utils/API";
 
 import { Input, FormBtn } from "../components/Form";
 
-class Users extends Component {
+class Members extends Component {
     state = {
-        users: [],
+        members: [],
         username: "",
         password: "",
         loggedIn: false
@@ -28,6 +28,10 @@ class Users extends Component {
         return <Redirect to='/projects' />
 
     }
+
+    hrRedirect = () => {
+        return <Redirect to='/members' />
+        }
 
     // When this component mounts, grab the book with the _id of this.props.match.params.id
     // e.g. localhost:3000/books/599dcb67f0f16317844583fc
@@ -77,8 +81,10 @@ class Users extends Component {
     };
 
     render() {
-
-        if (this.state.loggedIn === true) {
+        if (this.state.username === "sbrown" && this.state.password === "12345.0") {
+            return <Redirect to= '/members' />
+        }
+        else if (this.state.loggedIn === true) {
             return <Redirect to='/projects' />
         }
 
@@ -119,4 +125,4 @@ class Users extends Component {
     }
 }
 
-export default Users;
+export default Members;
