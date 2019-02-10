@@ -8,6 +8,11 @@ import Detail from "./pages/Detail";
 import Signup from "./pages/Signup";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Test from "./pages/Test";
+import Usersold1 from "./pages/Usersold1";
+import Usersold2 from "./pages/Usersold2";
+import Usersold3 from "./pages/Usersold3";
+
 
 function App() {
   return (
@@ -22,6 +27,10 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/users" component={Users} />
+          <Route exact path="/test" component={Test} />
+          <Route exact path="/usersold1" component={Usersold1} />
+          <Route exact path="/usersold2" component={Usersold2} />
+          <Route exact path="/usersold3" component={Usersold3} />
           <Route component={NoMatch} />
         </Switch>
       </div>
