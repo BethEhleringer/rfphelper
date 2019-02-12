@@ -80,6 +80,8 @@ class Members extends Component {
         }
     };
 
+    //end local strategy
+
     render() {
         if (this.state.username === "sbrown" && this.state.password === "12345.0") {
             return <Redirect to= '/members' />
@@ -89,12 +91,15 @@ class Members extends Component {
         }
 
         return (
-            <Container fluid>
-                <Row>
-                    <Col size="md-12">
-                        <Jumbotron>
-                            <h1>Enter User Information</h1>
-                        </Jumbotron>
+            <div className="container"> 
+            <div className="row">
+                    <div className="col-lg-6 offset-lg-3 col-lg-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12">
+                    <div className="card">
+                    <div className="card-header">
+                     
+                            <h1>Login</h1>
+                     </div>
+                     <div className="card-body">
                         <form>
                             <Input
                                 value={this.state.username}
@@ -116,11 +121,12 @@ class Members extends Component {
                             >
                                 Login
                             </FormBtn>
-                        </form>
-                    </Col>
-                </Row>
+                        </form></div>
+                        </div> </div></div></div>
+                    
                
-            </Container>
+               
+           
         );
     }
 }
