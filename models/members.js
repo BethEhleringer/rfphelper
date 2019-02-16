@@ -16,7 +16,7 @@ const membersSchema = new Schema({
 });
 
 // Define schema methods
-userSchema.methods = {
+membersSchema.methods = {
   checkPassword: function (inputPassword) {
     return bcrypt.compareSync(inputPassword, this.password)
   },
@@ -26,9 +26,9 @@ userSchema.methods = {
 }
 
 // Define hooks for pre-saving
-userSchema.pre('save', function (next) {
+membersSchema.pre('save', function (next) {
   if (!this.password) {
-    console.log('models/user.js hashPassword in pre save');
+    console.log('models/members.js hashPassword in pre save');
 
     this.password = this.hashPassword(this.password)
     next()

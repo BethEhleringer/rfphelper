@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom'
+//import { Redirect } from 'react-router-dom'
 import Axios from "axios";
-import { Route, Link } from "react-router-dom";
+//import { Route, Link } from "react-router-dom";
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
@@ -24,7 +24,7 @@ class Nav extends Component {
   logout(event) {
     event.preventDefault()
     console.log('logging out')
-    Axios.post('/user/logout').then(response => {
+    Axios.post('/member/logout').then(response => {
       console.log(response.data)
       if (response.status === 200) {
         this.props.updateUser({
@@ -49,20 +49,13 @@ class Nav extends Component {
           <div className="col-4">
             {loggedIn ? (
               <section className="navbar-section">
-                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                  <span className="text-secondary">logout</span></Link>
+               
+                  <span className="text-secondary">logout</span>
               </section>
             ) : (
                 <section className="navbar-section">
-                  <Link to="/" className="btn btn-link text-secondary">
-                    <span className="text-secondary">home</span>
-                  </Link>
-                  <Link to="/login" className="btn btn-link text-secondary">
-                    <span className="text-secondary">login</span>
-                  </Link>
-                  <Link to="/signup" className="btn btn-link">
-                    <span className="text-secondary">sign up</span>
-                  </Link>
+                
+                
                 </section>
               )}
           </div>

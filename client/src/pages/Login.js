@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import { Route } from 'react-router-dom';
-import Nav from '../components/Nav';
+//import { Route } from 'react-router-dom';
+//import Nav from '../components/Nav';
 //import Signup from './components/sign-up'
 import LoginForm from '../components/LoginForm'
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
+//import { Col, Row, Container } from "../components/Grid";
+//import Jumbotron from "../components/Jumbotron";
+//import API from "../utils/API";
 //MAKE THE LOGINFORM COMPONENT!
 //MAKE THE SIGNUP PAGE!
-import { Input, FormBtn } from "../components/Form";
+//import { Input, FormBtn } from "../components/Form";
 import Axios from "axios";
 
 class Login extends Component {
