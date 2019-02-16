@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route } from 'react-router-dom';
 import Nav from '../components/Nav';
-//import Signup from './components/sign-up'
-import LoginForm from '../components/LoginForm'
+import Signup from './components/sign-up'
+import LoginForm from './components/LoginForm'
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
@@ -55,14 +55,28 @@ getMember() {
 
 render() {
     return (
-        <div>
+        <div className="Login">
         
-       
+        <Nav updateMember={this.updateMember} loggedIn={this.state.loggedIn} />
+        {/* greet member if logged in: */}
+        {this.state.loggedIn &&
+        <p>Welcome, {this.state.username}!</p>
+        }
+        {/* Routes to different components */}
+        
+        <Route path="/login" 
+        render={() =>
+        <LoginForm
+            updateMember={this.updateMember}
+            />}     
+            />
+            <Route
+            path="/signup"
+            render={() =>
+            <Signup/>}  
+            />
 
-        <LoginForm updateMember={this.updateMember} />   
-            
-           </div>
-
+        </div>
     );
 }
 }

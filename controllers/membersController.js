@@ -1,4 +1,6 @@
+const express = require('express')
 const db = require("../models");
+const passport = require('../passport')
 
 // Defining methods for the usersController
 module.exports = {
@@ -9,12 +11,24 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+ 
   findById: function(req, res) {
     db.Members
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+//findByUsername
+ 
+/*findOne: function(req, res) {
+  db.Members
+    .findByUsername(req.params.username)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+
+},*/
+
+//end findByUsername
   create: function(req, res) {
     db.Members
       .create(req.body)

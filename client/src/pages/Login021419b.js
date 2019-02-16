@@ -57,6 +57,7 @@ render() {
     return (
         <div>
         
+        <Nav updateMember={this.updateMember} loggedIn={this.state.loggedIn} />
        
 
         <LoginForm updateMember={this.updateMember} />   

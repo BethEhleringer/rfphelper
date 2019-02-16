@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Projects from "./pages/Projects";
 import ProjectEntry from "./pages/ProjectEntry";
@@ -14,59 +14,9 @@ import Usersold2 from "./pages/Usersold2";
 import Usersold3 from "./pages/Usersold3";
 import Login2 from "./pages/Login2";
 import Members from "./pages/Members";
-import Axios from "axios";
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      loggedIn:false,
-      username:null
-    }
-    this.getMember = this.getMember.bind(this)
-    this.componentDidMount = this.componentDidMount.bind(this)
-    this.updateMember = this.updateMember.bind(this)
-  }
-
-  componentDidMount() {
-    this.getMember()
-  }
-
-  updateMember (memberObject) {
-    this.setState(memberObject)
-  }
-
-  getMember() {
-    Axios.get('/member/').then(response => {
-      console.log('Get member response: ')
-      console.log(response.data)
-      if (response.data.member) {
-        console.log('Get Member: There is a member saved in the server session.')
-
-        this.setState({
-          loggedIn: true,
-          username: response.data.user.username
-        })
-      } else {
-        console.log('Get member: no member');
-        this.setState({
-          loggedIn: false,
-          username: null
-        })
-      }
-    })
-  }
-
-render() {
+function App() {
   return (
-    <div className="App">
-
-      <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-      {/* greet member if logged in: */}
-      {this.state.loggedIn &&
-      <p>Welcome, {this.state.username}!</p>
-      }
-      {/* Routes to different components */}
     <Router>
       <div>
         <Nav />
@@ -88,9 +38,7 @@ render() {
         </Switch>
       </div>
     </Router>
-    </div>
   );
-}
 }
 
 export default App;
